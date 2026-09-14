@@ -5,45 +5,59 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
-	
-	public static void main(String[] args) {
+
+    public static void main(String[] args) {
 
         List<String> nomes = new ArrayList<>();
         List<String> celulares = new ArrayList<>();
         List<String> emails = new ArrayList<>();
+
         int opcao;
         boolean continuar = true;
+
         Scanner sc = new Scanner(System.in);
 
-        mostraInicializacao(); 
+        mostraInicializacao();
 
         while (continuar) {
-        	mostraMenu();
+
+            mostraMenu();
+
             opcao = selecionaOpcao(sc);
 
             switch (opcao) {
-                case 1-> adicionar(sc, nomes, celulares, emails);           	
-                case 2-> listar(nomes, celulares, emails);
-                case 3-> pesquisar(sc, nomes, celulares, emails);
-                case 4-> atualizar(sc, nomes, celulares, emails);           	
-                case 5-> excluir(sc, nomes, celulares, emails);          	
-                case 6-> sair(continuar);
+
+                case 1 -> adicionar(sc, nomes, celulares, emails);
+
+                case 2 -> listar(nomes, celulares, emails);
+
+                case 3 -> pesquisar(sc, nomes, celulares, emails);
+
+                case 4 -> atualizar(sc, nomes, celulares, emails);
+
+                case 5 -> excluir(sc, nomes, celulares, emails);
+
+                case 6 -> continuar = sair();
+
                 default -> System.out.println("Opção inválida!");
             }
         }
+
         sc.close();
     }
-    
+
     public static void mostraInicializacao() {
-    	System.out.println("==========================");
-        System.out.println("     AGENDA DE CONTATOS    ");
+
+        System.out.println("==========================");
+        System.out.println("     AGENDA DE CONTATOS   ");
         System.out.println("          v1.0.0           ");
         System.out.println("==========================");
         System.out.println("Bem-vindo!");
     }
-    
+
     public static void mostraMenu() {
-    	System.out.println();
+
+        System.out.println();
         System.out.println("1 - Adicionar contato");
         System.out.println("2 - Listar contatos");
         System.out.println("3 - Procurar contato");
@@ -51,20 +65,31 @@ public class Principal {
         System.out.println("5 - Excluir contato");
         System.out.println("6 - Sair");
     }
-    
+
     public static int selecionaOpcao(Scanner sc) {
-    	System.out.print("Escolha uma opção: ");
+
+        System.out.print("Escolha uma opção: ");
+
         int opc = sc.nextInt();
         sc.nextLine();
+
         return opc;
     }
-    
-    public static void adicionar(Scanner sc, List<String> nomes, List<String> celulares, List<String> emails) {
-    	System.out.println("=== ADICIONAR CONTATO ===");
+
+    public static void adicionar(
+            Scanner sc,
+            List<String> nomes,
+            List<String> celulares,
+            List<String> emails) {
+
+        System.out.println("=== ADICIONAR CONTATO ===");
+
         System.out.print("Digite o nome: ");
         String nome = sc.nextLine();
+
         System.out.print("Digite o celular: ");
         String celular = sc.nextLine();
+
         System.out.print("Digite o email: ");
         String email = sc.nextLine();
 
@@ -79,11 +104,15 @@ public class Principal {
             List<String> nomes,
             List<String> celulares,
             List<String> emails) {
-    	System.out.println("=== LISTAR CONTATOS ===");
+
+        System.out.println("=== LISTAR CONTATOS ===");
+
         if (nomes.size() == 0) {
+
             System.out.println("Nenhum contato cadastrado!");
 
         } else {
+
             for (int i = 0; i < nomes.size(); i++) {
 
                 System.out.println("--------------------------");
@@ -99,14 +128,18 @@ public class Principal {
             List<String> nomes,
             List<String> celulares,
             List<String> emails) {
-    	System.out.println("=== PROCURAR CONTATO ===");
+
+        System.out.println("=== PROCURAR CONTATO ===");
+
         System.out.print("Digite o nome do contato: ");
         String nomeBusca = sc.nextLine();
 
         boolean encontrado = false;
 
         for (int i = 0; i < nomes.size(); i++) {
+
             if (nomes.get(i).equalsIgnoreCase(nomeBusca)) {
+
                 System.out.println("--------------------------");
                 System.out.println("Nome: " + nomes.get(i));
                 System.out.println("Celular: " + celulares.get(i));
@@ -115,7 +148,9 @@ public class Principal {
                 encontrado = true;
             }
         }
+
         if (!encontrado) {
+
             System.out.println("Contato não encontrado!");
         }
     }
@@ -125,16 +160,23 @@ public class Principal {
             List<String> nomes,
             List<String> celulares,
             List<String> emails) {
-    	System.out.println("=== ALTERAR CONTATO ===");
+
+        System.out.println("=== ALTERAR CONTATO ===");
+
         System.out.print("Digite o nome do contato: ");
         String nomeProcurado = sc.nextLine();
 
         int posicao = -1;
+
         for (int i = 0; i < nomes.size(); i++) {
+
             if (nomes.get(i).equalsIgnoreCase(nomeProcurado)) {
+
                 posicao = i;
+                break;
             }
         }
+
         if (posicao != -1) {
 
             System.out.print("Digite o novo nome: ");
@@ -151,7 +193,9 @@ public class Principal {
             emails.set(posicao, novoEmail);
 
             System.out.println("Contato alterado com sucesso!");
+
         } else {
+
             System.out.println("Contato não encontrado!");
         }
     }
@@ -161,14 +205,18 @@ public class Principal {
             List<String> nomes,
             List<String> celulares,
             List<String> emails) {
-    	System.out.println("=== EXCLUIR CONTATO ===");
+
+        System.out.println("=== EXCLUIR CONTATO ===");
+
         System.out.print("Digite o nome do contato: ");
         String nomeExcluir = sc.nextLine();
 
         boolean excluido = false;
 
         for (int i = 0; i < nomes.size(); i++) {
+
             if (nomes.get(i).equalsIgnoreCase(nomeExcluir)) {
+
                 nomes.remove(i);
                 celulares.remove(i);
                 emails.remove(i);
@@ -176,16 +224,21 @@ public class Principal {
                 excluido = true;
 
                 System.out.println("Contato excluído com sucesso!");
+
                 break;
             }
         }
+
         if (!excluido) {
+
             System.out.println("Contato não encontrado!");
         }
     }
-    
-    public static void sair(boolean continuar) {
-    	System.out.println("Saindo da Agenda de Contatos...");
-        continuar = false;
+
+    public static boolean sair() {
+
+        System.out.println("Saindo da Agenda de Contatos...");
+
+        return false;
     }
 }
