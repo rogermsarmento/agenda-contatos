@@ -12,13 +12,12 @@ public class Principal {
         List<String> celulares = new ArrayList<>();
         List<String> emails = new ArrayList<>();
         int opcao;
-        boolean continuar = true;
         
         Scanner sc = new Scanner(System.in);
         
         Uteis.mostraInicializacao(); 
 
-        while (continuar) {
+        while (true) {
         	Uteis.mostraMenu();
             opcao = Uteis.selecionaOpcao(sc);
 
@@ -28,11 +27,10 @@ public class Principal {
                 case 3-> Agenda.pesquisar(sc, nomes, celulares, emails);
                 case 4-> Agenda.atualizar(sc, nomes, celulares, emails);           	
                 case 5-> Agenda.excluir(sc, nomes, celulares, emails);          	
-                case 6-> continuar = Uteis.sair();
+                case 6-> Uteis.sair();
                 case 7-> Uteis.sobre();
                 default -> System.out.println("Opção inválida!");
             }
         }
-        sc.close();
     }
 }
