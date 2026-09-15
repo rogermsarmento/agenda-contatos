@@ -77,8 +77,7 @@ Nesta versão, a Agenda de Contatos recebeu a implementação da funcionalidade 
 - Atualização dos dados nas listas (`List` / `ArrayList`) utilizando o método `set()`
 - Reutilização da lógica de validação/busca para localização do registro antes da modificação
 
-## Versão atual
- **v1.0.0 - Modularização das funcionalidades**
+## V1.0.0 - Modularização das funcionalidades
 
 Nesta versão, o projeto Agenda de Contatos foi reorganizado por meio da criação de métodos.
 
@@ -115,6 +114,9 @@ Os contatos continuam sendo armazenados em três listas do tipo `List<String>`:
 
 > A versão v1.0.0 mantém as funcionalidades da v0.3.0, alterando principalmente a organização interna do código.
 
+## Versão atual
+ **V.1.1.0 - Modularização das funcionalidades em arquivos separados (Uteis e Agenda)**
+
 ### Próximas versões
 
 O projeto continuará evoluindo.
@@ -122,6 +124,7 @@ O projeto continuará evoluindo.
 <!-- - `v0.2.0` — armazenamento com List e ArrayList; -->
 <!-- - `v0.3.0` — funcionalidade de alterar contato; -->
 - `v1.0.0` - Modularização das funcionalidades
+- `v1.1.0` - Modularização das funcionalidades em arquivos separados
 
 ## Controle de versões
 
@@ -137,3 +140,4 @@ Exemplo:
   - V0.3.0
 - V1
   - V1.0.0
+  - V1.1.0
