@@ -11,3 +11,9 @@ bin/
 
 # Arquivos temporários
 *.log
+
+#intelij
+.idea/
+*.iml
+out/
+target/
