@@ -30,23 +30,9 @@ public class Uteis {
         sc.nextLine();
         return opc;
     }
-
-    public static boolean sair() {
-    	System.out.println("Saindo da Agenda de Contatos...");
-        return false;
-    }
     
     public static void sobre() {
     	JOptionPane.showMessageDialog(null, 
     			"Desenvolvido por Roger M. Sarmento!");
     }
 }
-
-
-
-
-
-
-
-
-
