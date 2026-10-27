@@ -38,9 +38,7 @@ public class Agenda {
         	for (Contato contato : contatos) {
 
                 System.out.println("--------------------------");
-                System.out.println("Nome: " + contato.getNome());
-                System.out.println("Celular: " + contato.getCelular());
-                System.out.println("Email: " + contato.getEmail());
+                System.out.println(contato.toString());
             }
         }
     }
@@ -59,9 +57,7 @@ public class Agenda {
             if (contato.getNome().equalsIgnoreCase(nomeBusca)) {
 
             	System.out.println("--------------------------");
-                System.out.println("Nome: " + contato.getNome());
-                System.out.println("Celular: " + contato.getCelular());
-                System.out.println("Email: " + contato.getEmail());
+                System.out.println(contato.toString());
 
                 encontrado = true;
             }
